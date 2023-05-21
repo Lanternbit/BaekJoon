@@ -12,10 +12,10 @@ int main() {
 		sum += arr[i];
 	}
 
-	sort(arr, arr + 7);
+	sort(arr, arr + 5);
 
 	cout << sum / 5 << "\n";
-	cout << arr[3];
+	cout << arr[2];
 
 	return 0;
 }
