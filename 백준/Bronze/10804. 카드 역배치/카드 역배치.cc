@@ -1,22 +1,6 @@
 #include<iostream>
 using namespace std;
 
-int reverse(int a, int b, int (&card)[]) {
-	int d = b - a;
-	
-	if (d != 0) {
-		for (int i = 0; i < d; i++) {
-			int t;
-
-			t = card[a + i];
-			card[a + i] = card[b - i];
-			card[b - i] = t;
-		}
-	}
-
-	return card[20];
-}
-
 int main() {
 	int card[20];
 	int a;
