@@ -14,7 +14,7 @@ int main(void) {
 	int num = A * B * C;
 
 	for (int i = 0; i < 9; i++) {
-		if (num / 10 == 0 && num % 10 == 0) break;
+		if (num == 0) break;
 		else {
 			arr[num % 10]++;
 			num /= 10;
