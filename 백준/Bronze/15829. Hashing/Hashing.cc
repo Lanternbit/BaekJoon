@@ -1,5 +1,4 @@
 #include<iostream>
-#include<cmath>
 using namespace std;
 
 int main() {
@@ -18,9 +17,15 @@ int main() {
 	for (int i = 0; i < L; i++) {
 		cin >> a[i];
 
-		int alphabet = (int)a[i] - 96;
+		int alphabet = a[i] - 96;
+		long long p = 1;
 
-		H += alphabet * pow(R, i);
+		for (int j = 0; j < i; j++) {
+			p = (p * R) % M;
+		}
+
+		p = p * alphabet;
+		H += p % M;
 	}
 
 	cout << H % M << "\n";
