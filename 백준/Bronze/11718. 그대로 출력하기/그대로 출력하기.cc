@@ -12,11 +12,11 @@ int main() {
 	for (int i = 0; i < 100; i++) {
 		getline(cin, word[i]);
 
-		int w = int(word[i][0]);
-		if (w > 0) w = 0;
-		else break;
-
 		length++;
+
+		if (cin.eof()) {
+			break;
+		}
 	}
 
 	for (int i = 0; i < length; i++) {
