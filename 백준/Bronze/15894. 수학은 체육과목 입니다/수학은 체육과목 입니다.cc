@@ -9,5 +9,5 @@ int main() {
 
 	cin >> n;
 
-	cout << (n - 1) * 3 + (n + 3);
+	cout << 4 * n;
 }
