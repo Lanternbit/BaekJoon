@@ -8,25 +8,28 @@ int main() {
 
 	int t;
 	vector<long long> v;
+	int s = 4;
 
 	cin >> t;
 
+	v.push_back(0);
+	v.push_back(1);
+	v.push_back(2);
+	v.push_back(4);
+
+	for (int i = 4; i <= 1000000; i++) {
+		long long k = v[i - 1] + v[i - 2] + v[i - 3];
+
+		if (k > 1000000009) k %= 1000000009;
+
+		v.push_back(k);
+	}
+	
 	while (t--) {
 		int n;
 
 		cin >> n;
-
-		v.push_back(0);
-		v.push_back(1);
-		v.push_back(2);
-		v.push_back(4);
-
-		for (int i = 4; i <= n; i++) {
-			v.push_back((v[i - 1] + v[i - 2] + v[i - 3]) % 1000000009);
-		}
 	
 		cout << v[n] << "\n";
-
-		v.clear();
 	}
 }
