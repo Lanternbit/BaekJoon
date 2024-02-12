@@ -15,7 +15,7 @@ void func(int k) {
 		}
 		cout << "\n";
 
-		arr[k + 1] = 0;
+		arr[k] = 0;
 		return;
 	}
 
@@ -32,7 +32,7 @@ void func(int k) {
 		}
 	}
 
-	arr[k + 1] = 0;
+	arr[k] = 0;
 }
 
 int main(void) {
@@ -53,7 +53,6 @@ int main(void) {
 
 	sort(v.begin(), v.end());
 
-	v.push_back(0);
 	v.push_back(0);
 	func(0);
 
