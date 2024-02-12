@@ -58,7 +58,6 @@ int main(void) {
 	sort(v.begin(), v.end());
 
 	v.push_back(0);
-	v.push_back(0);
 	func(0);
 
 	return 0;
