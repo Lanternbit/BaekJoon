@@ -1,30 +1,35 @@
 #include<iostream>
 #include<string>
-#include<deque>
 using namespace std;
 
-int n;
-int m;
-int ans = 0;
+int n, m;
 string s;
-deque<char> d;
+string p;
+int ans = 0;
+int len = 0;
+int check = 0;
 
-void check(int len) {
-	ans++;
+void make_str() {
+	p = 'I';
 
-	for (int j = 0; j < len; j++) {
+	for (int i = 0; i < n; i++) {
+		p += "OI";
+	}
+}
 
-		if (j % 2 == 0) {
-			if (d[j] != 'I') {
-				ans--;
-				break;
+void matching() {
+	for (int i = 0; i < s.length(); i++) {
+		if (s[i] == 'I') {
+			check = 1;
+
+			while (s[i + 1] == 'O' && s[i + 2] == 'I') {
+				len++;
+				i += 2;
 			}
-		}
-		else {
-			if (d[j] != 'O') {
-				ans--;
-				break;
-			}
+
+			if (len >= n) ans += len - n + 1;
+
+			len = 0;
 		}
 	}
 }
@@ -35,19 +40,11 @@ int main(void) {
 
 	cin >> n >> m >> s;
 
-	int len = 2 * n + 1;
+	make_str();
 
-	for (int i = 0; i < m; i++) {
-		if (i < len) d.push_back(s[i]);
-		else {
-			check(len);
-			
-			d.pop_front();
-			d.push_back(s[i]);
-		}
-
-		if (i == m - 1) check(len);
-	}
+	matching();
 
 	cout << ans << "\n";
+
+	return 0;
 }
