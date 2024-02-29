@@ -9,14 +9,6 @@ int ans = 0;
 int len = 0;
 int check = 0;
 
-void make_str() {
-	p = 'I';
-
-	for (int i = 0; i < n; i++) {
-		p += "OI";
-	}
-}
-
 void matching() {
 	for (int i = 0; i < s.length(); i++) {
 		if (s[i] == 'I') {
@@ -39,8 +31,6 @@ int main(void) {
 	cin.tie(0);
 
 	cin >> n >> m >> s;
-
-	make_str();
 
 	matching();
 
