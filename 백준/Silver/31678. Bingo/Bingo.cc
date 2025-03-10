@@ -70,21 +70,24 @@ int main() {
             for (int j = 0; j < 5; j++) {
                 if (board[i][j] == ball) board[i][j] = 0;
             }
-
-            if (board[i][0] == 0 && board[i][1] == 0 && board[i][2] == 0 && board[i][3] == 0 && board[i][4] == 0) {
-                ans++;
-                bingo.push_back(names[i/12]);
-                i += 11 - i%12;
-            }
         }
 
-        if (ans != 0) {
-            cout << ans << "\n";
+    }
 
-            for (int i = 0; i < bingo.size(); i++) cout << bingo[i] << "\n";
-            return 0;
+    for (int i = 0; i < names.size()*12; i++) {
+        if (board[i][0] == 0 && board[i][1] == 0 && board[i][2] == 0 && board[i][3] == 0 && board[i][4] == 0) {
+            ans++;
+            bingo.push_back(names[i/12]);
+
+            for (int k = 0; k < 5; k++) board[i][k] = 91;
+            i += 11 - i%12;
         }
     }
 
-    if (ans == 0) cout << ans << "\n";
+    if (ans != 0) {
+        cout << ans << "\n";
+
+        for (int i = 0; i < bingo.size(); i++) cout << bingo[i] << "\n";
+    }
+    else cout << ans << "\n";
 }
